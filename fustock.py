@@ -1,7 +1,7 @@
+from sklearn.impute import SimpleImputer
 import pandas as pd
 import numpy as np
 import yfinance as yf
-from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
@@ -65,13 +65,17 @@ def train_linear_regression(X, y):
     return model
 
 if __name__ == '__main__':
+    
+    pd.set_option('display.max_rows', None)
+
     # Replace the ticker, start_date, and end_date for GOOGL
     ticker = 'GOOGL'
-    start_date = '2022-01-01'
-    end_date = '2023-12-31'
+    start_date = '2020-01-01'
+    end_date = '2021-12-21'
 
     # Data Collection
     data = get_stock_data(ticker, start_date, end_date)
+    print(data)
 
     # Data Preprocessing and Feature Engineering
     X, y = preprocess_data(data)
@@ -97,4 +101,3 @@ if __name__ == '__main__':
     plt.title('Stock Price Prediction for GOOGL')
     plt.legend()
     plt.show()
-
