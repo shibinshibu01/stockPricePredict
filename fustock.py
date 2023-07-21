@@ -75,6 +75,8 @@ if __name__ == '__main__':
 
     # Data Collection
     data = get_stock_data(ticker, start_date, end_date)
+
+    #print dataset
     print(data)
 
     # Data Preprocessing and Feature Engineering
