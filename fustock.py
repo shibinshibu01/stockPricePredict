@@ -83,6 +83,10 @@ if __name__ == '__main__':
     # Model Training
     model = train_linear_regression(X, y)
 
+    # Calculating and printing the accuracy of the model
+    score=model.score(X, y)
+    print('Accuracy of the model:', score)
+
     # Make predictions on future stock prices
     future_data = get_stock_data(ticker, '2022-01-01', '2023-12-31')
     X_future, _ = preprocess_data(future_data)
