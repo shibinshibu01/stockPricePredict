@@ -16,7 +16,7 @@ def preprocess_data(data):
     data.dropna(subset=['Close'], inplace=True)
 
     # Calculate additional technical indicators
-    data['SMA_50'] = data['Close'].rolling(window=50).mean()
+    data['SMA_50'] = data['Close'].rolling(window=50).mean()    
     data['SMA_200'] = data['Close'].rolling(window=200).mean()
     data['RSI'] = calculate_rsi(data['Close'])
     data['MACD'] = calculate_macd(data['Close'])
